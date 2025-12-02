@@ -1,0 +1,380 @@
+start_date: "01-01-2019 00:00" # aktuell nicht verwendet
+end_date: "31-12-2021 23:55"
+
+derived_fields:
+  - precip_type_5min:idx == 0 & precip_5min:mm
+  - precip_type_5min:idx == 1 & precip_5min:mm
+  - precip_type_5min:idx == 2 & precip_5min:mm
+  - precip_type_5min:idx == 3 & precip_5min:mm
+  - precip_type_5min:idx == 4 & precip_5min:mm
+  - precip_type_5min:idx == 5 & precip_5min:mm
+  - precip_type_5min:idx == 6 & precip_5min:mm
+  - precip_type_5min:idx == 2 & snow_depth:cm
+  - precip_type_5min:idx == 3 & snow_depth:cm
+  - precip_type_5min:idx == 0 & visibility:m
+  - precip_type_5min:idx == 1 & visibility:m
+  - precip_type_5min:idx == 2 & visibility:m
+  - precip_type_5min:idx == 3 & visibility:m
+  - precip_type_5min:idx == 4 & visibility:m
+  - precip_type_5min:idx == 5 & visibility:m
+  - precip_type_5min:idx == 6 & visibility:m
+
+aggregations:
+  - min
+  - pct01
+  - pct05
+  - average
+  - pct50
+  - pct95
+  - pct99
+  - max
+
+locations:
+  # Munich:
+  # Hamburg:
+  Los_Angeles:
+    data_file_name: weather_Los_Angeles_2018-12-31_2019-1-6_filtered_v2_clipped_by_Aleksei.parquet
+    additional_files:
+    - weather_Los_Angeles_2019-1-6_2019-1-13_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-1-13_2019-1-20_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-1-20_2019-1-27_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-1-27_2019-2-3_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-2-3_2019-2-10_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-2-10_2019-2-17_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-2-17_2019-2-24_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-2-24_2019-3-3_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-3-3_2019-3-10_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-3-10_2019-3-17_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-3-17_2019-3-24_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-3-24_2019-3-31_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-3-31_2019-4-7_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-4-7_2019-4-14_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-4-14_2019-4-21_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-4-21_2019-4-28_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-4-28_2019-5-5_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-5-5_2019-5-12_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-5-12_2019-5-19_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-5-19_2019-5-26_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-5-26_2019-6-2_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-6-2_2019-6-9_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-6-9_2019-6-16_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-6-16_2019-6-23_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-6-23_2019-6-30_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-6-30_2019-7-7_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-7-7_2019-7-14_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-7-14_2019-7-21_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-7-21_2019-7-28_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-7-28_2019-8-4_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-8-4_2019-8-11_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-8-11_2019-8-18_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-8-18_2019-8-25_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-8-25_2019-9-1_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-9-1_2019-9-8_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-9-8_2019-9-15_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-9-15_2019-9-22_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-9-22_2019-9-29_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-9-29_2019-10-6_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-10-6_2019-10-13_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-10-13_2019-10-20_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-10-20_2019-10-27_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-10-27_2019-11-3_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-11-3_2019-11-10_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-11-10_2019-11-17_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-11-17_2019-11-24_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-11-24_2019-12-1_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-12-1_2019-12-8_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-12-8_2019-12-15_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-12-15_2019-12-22_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-12-22_2019-12-29_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2019-12-29_2020-1-5_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-1-5_2020-1-12_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-1-12_2020-1-19_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-1-19_2020-1-26_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-1-26_2020-2-2_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-2-2_2020-2-9_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-2-9_2020-2-16_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-2-16_2020-2-23_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-2-23_2020-3-1_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-3-1_2020-3-8_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-3-8_2020-3-15_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-3-15_2020-3-22_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-3-22_2020-3-29_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-3-29_2020-4-5_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-4-5_2020-4-12_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-4-12_2020-4-19_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-4-19_2020-4-26_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-4-26_2020-5-3_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-5-3_2020-5-10_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-5-10_2020-5-17_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-5-17_2020-5-24_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-5-24_2020-5-31_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-5-31_2020-6-7_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-6-7_2020-6-14_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-6-14_2020-6-21_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-6-21_2020-6-28_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-6-28_2020-7-5_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-7-5_2020-7-12_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-7-12_2020-7-19_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-7-19_2020-7-26_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-7-26_2020-8-2_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-8-2_2020-8-9_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-8-9_2020-8-16_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-8-16_2020-8-23_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-8-23_2020-8-30_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-8-30_2020-9-6_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-9-6_2020-9-13_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-9-13_2020-9-20_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-9-20_2020-9-27_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-9-27_2020-10-4_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-10-4_2020-10-11_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-10-11_2020-10-18_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-10-18_2020-10-25_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-10-25_2020-11-1_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-11-1_2020-11-8_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-11-8_2020-11-15_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-11-15_2020-11-22_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-11-22_2020-11-29_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-11-29_2020-12-6_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-12-6_2020-12-13_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-12-13_2020-12-20_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-12-20_2020-12-27_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2020-12-27_2021-1-3_filtered_v2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-1-3_2021-1-10_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-1-10_2021-1-17_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-1-17_2021-1-24_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-1-24_2021-1-31_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-1-31_2021-2-7_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-2-7_2021-2-14_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-2-14_2021-2-21_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-2-21_2021-2-28_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-2-28_2021-3-7_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-3-7_2021-3-14_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-3-14_2021-3-21_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-3-21_2021-3-28_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-3-28_2021-4-4_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-4-4_2021-4-11_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-4-11_2021-4-18_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-4-18_2021-4-25_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-4-25_2021-5-2_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-5-2_2021-5-9_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-5-9_2021-5-16_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-5-16_2021-5-23_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-5-23_2021-5-30_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-5-30_2021-6-6_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-6-6_2021-6-13_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-6-13_2021-6-20_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-6-20_2021-6-27_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-6-27_2021-7-4_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-7-4_2021-7-11_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-7-11_2021-7-18_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-7-18_2021-7-25_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-7-25_2021-8-1_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-8-1_2021-8-8_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-8-8_2021-8-15_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-8-15_2021-8-22_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-8-22_2021-8-29_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-8-29_2021-9-5_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-9-5_2021-9-12_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-9-12_2021-9-19_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-9-19_2021-9-26_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-9-26_2021-10-3_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-10-3_2021-10-10_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-10-10_2021-10-17_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-10-17_2021-10-24_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-10-24_2021-10-31_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-10-31_2021-11-7_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-11-7_2021-11-14_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-11-14_2021-11-21_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-11-21_2021-11-28_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-11-28_2021-12-5_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-12-5_2021-12-12_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-12-12_2021-12-19_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-12-19_2021-12-26_clipped_by_Aleksei.parquet
+    - weather_Los_Angeles_2021-12-26_2022-1-1_clipped_by_Aleksei.parquet
+    - 
+    
+# Zeitzonen bei Zeitumstellung anpassen! Zeit fuer Deutschland! winter/sommerzeit umstellung
+#usa = 4 zeitzonen
+#dubai = keine sommer/winterzeit = eine zeitzone +4h
+      
+        
+    timezones:
+      zone_0:
+        start_date_time: 2018-11-04 02:00
+        end_date_time: 2019-03-10 02:00
+        delta: -08:00 # PST (Pacific Standard Time)
+      zone_1:
+        start_date_time: 2019-03-10 02:00
+        end_date_time: 2019-11-03 02:00
+        delta: -07:00 # PDT (Pacific Daylight Time)
+      zone_2:
+        start_date_time: 2019-11-03 02:00
+        end_date_time: 2020-03-08 02:00
+        delta: -08:00 # PST
+      zone_3:
+        start_date_time: 2020-03-08 02:00
+        end_date_time: 2020-11-01 02:00
+        delta: -07:00 # PDT
+      zone_4:
+        start_date_time: 2020-11-01 02:00
+        end_date_time: 2021-03-14 02:00
+        delta: -08:00 # PST
+      zone_5:
+        start_date_time: 2021-03-14 02:00
+        end_date_time: 2021-11-07 02:00
+        delta: -07:00 # PDT
+      zone_6:
+        start_date_time: 2021-11-07 02:00
+        end_date_time: 2022-03-13 02:00
+        delta: -08:00 # PST
+      zone_7:
+        start_date_time: 2022-03-13 02:00
+        end_date_time: 2022-11-06 02:00
+        delta: -07:00 # PDT
+      zone_8:
+        start_date_time: 2022-11-06 02:00
+        end_date_time: 2023-03-12 02:00
+        delta: -08:00 # PST
+      zone_9:
+        start_date_time: 2023-03-12 02:00
+        end_date_time: 2023-11-05 02:00
+        delta: -07:00 # PDT
+        
+
+    #areas:
+     # area_1:
+      #  include:
+      #    - 20221212_Hamburg_Ring2.txt
+     #   exclude:
+     #     - 20221212_Hamburg_Aussenalster.txt
+      # area_2:
+      #   include:
+      #     - 20221212_Hamburg_A7_B433_Ring2east.txt
+      #   exclude:
+      #     - 20221212_Hamburg_Aussenalster.txt
+      # area_3:
+      #   exclude:
+      #     - 20221212_Hamburg_A7_B433_Ring2east.txt
+      # area_4:
+      #   include:
+      #     - 20221212_Hamburg_A7_B433_Ring2east.txt
+      #   exclude:
+      #     - 20221212_Hamburg_Ring2.txt
+    
+    events:
+# we wantend to include at this level another file with the relevant events that can then be overwritten individually (same to modules)
+# for the time being I will just name all events here
+      event_temperature:
+        low_threshold_field: t_2m:C
+        low_threshold_agg: min
+        low_threshold_value: -20
+        high_threshold_field: t_2m:C
+        high_threshold_agg: max
+        high_threshold_value: 40
+        downtime_before: '01:00:00'
+        downtime_after: '01:00:00'
+      event_wind_speed:
+        high_threshold_field: wind_speed_10m:ms
+        high_threshold_agg: max
+        high_threshold_value: 20.5 #102km/h in m/s currently not commited by ME, 133 km/h targeted
+        downtime_before: '01:00:00'
+        downtime_after: '01:00:00'
+      event_wind_gust_speed:
+        high_threshold_field: wind_gusts_10m_1h:ms
+        high_threshold_agg: max
+        high_threshold_value: 20.5 #102km/h in m/s currently not commited by ME, 133 km/h targeted
+        downtime_before: '01:00:00'
+        downtime_after: '01:00:00'
+      # idx = 1 -> rain
+      event_rain:
+        high_threshold_field: precip_type_5min:idx == 1 & precip_5min:mm
+        high_threshold_agg: max
+        high_threshold_value: 0.63 #20mm/h --> 1.67 mm/5min === new 7.6mm/h
+        downtime_before: '01:00:00'
+        downtime_after: '01:00:00'
+      event_rain_snow:
+        high_threshold_field: precip_type_5min:idx == 2 & precip_5min:mm
+        high_threshold_agg: max
+        high_threshold_value: 0.63 #7.6mm/h  --> 0.63 mm/5min --> limit chosen in between 20mm/h rain and 2,4 mm/h snow
+        downtime_before: '01:00:00'
+        downtime_after: '01:00:00'
+      # idx = 3 -> Snow
+      event_snow_rate:
+        high_threshold_field: precip_type_5min:idx == 3 & precip_5min:mm
+        high_threshold_agg: max
+        high_threshold_value: 0.17 #2,4mm/h roughly equal the 244m visibility of the requirement based on https://journals.ametsoc.org/view/journals/apme/38/10/1520-0450_1999_038_1542_teosru_2.0.co_2.xml
+        downtime_before: '01:00:00'
+        downtime_after: '01:00:00'
+      event_sleet:
+        high_threshold_field: precip_type_5min:idx == 4 & precip_5min:mm
+        high_threshold_agg: max
+        high_threshold_value: 0.63 #7.6mm/h --> 0.63 mm/5min --> limit chosen in between 20mm/h rain and 2,4 mm/h snow
+        downtime_before: '01:00:00'
+        downtime_after: '01:00:00'
+      event_freezing_rain:
+        high_threshold_field: precip_type_5min:idx == 5 & precip_5min:mm
+        high_threshold_agg: max
+        high_threshold_value: 0.63
+        downtime_before: '01:00:00'
+        downtime_after: '01:00:00'
+      event_hail_amount: 
+        high_threshold_field: precip_type_5min:idx == 6 & precip_5min:mm
+        high_threshold_agg: max
+        high_threshold_value: 0.63
+        downtime_before: '01:00:00'
+        downtime_after: '01:00:00'
+      #event_hail_size:
+        #high_threshold_field: hail_5min:cm
+        #high_threshold_agg: max
+        #high_threshold_value: 0.2 #selected to not take smaller hail into account that is not differentiable from rain
+        #downtime_before: '01:00:00'
+        #downtime_after: '01:00:00'
+      event_visibility:
+        low_threshold_field: visibility:m # low = wert unterschritten, value von oben
+        low_threshold_agg: min # min sichtweite oder 1. percentile
+        low_threshold_value: 500 #
+        downtime_before: '01:00:00'
+        downtime_after: '01:00:00'
+      # event_visibility_noPrec0:
+      #   low_threshold_field: precip_type_5min:idx == 0 & visibility:m # low = wert unterschritten, value von oben
+      #   low_threshold_agg: min # min sichtweite oder 1. percentile
+      #   low_threshold_value: 244 #
+      #   downtime_before: '01:00:00'
+      #   downtime_after: '01:00:00'
+      # event_visibility_Prec1:
+      #   low_threshold_field: precip_type_5min:idx == 1 & visibility:m # low = wert unterschritten, value von oben
+      #   low_threshold_agg: min # min sichtweite oder 1. percentile
+      #   low_threshold_value: 244 #
+      #   downtime_before: '01:00:00'
+      #   downtime_after: '01:00:00'
+      # event_visibility_Prec2:
+      #   low_threshold_field: precip_type_5min:idx == 2 & visibility:m # low = wert unterschritten, value von oben
+      #   low_threshold_agg: min # min sichtweite oder 1. percentile
+      #   low_threshold_value: 244 #
+      #   downtime_before: '01:00:00'
+      #   downtime_after: '01:00:00'
+      # event_visibility_Prec3:
+      #   low_threshold_field: precip_type_5min:idx == 3 & visibility:m # low = wert unterschritten, value von oben
+      #   low_threshold_agg: min # min sichtweite oder 1. percentile
+      #   low_threshold_value: 244 #
+      #   downtime_before: '01:00:00'
+      #   downtime_after: '01:00:00'
+      # event_visibility_Prec4:
+      #   low_threshold_field: precip_type_5min:idx == 4 & visibility:m # low = wert unterschritten, value von oben
+      #   low_threshold_agg: min # min sichtweite oder 1. percentile
+      #   low_threshold_value: 244 #
+      #   downtime_before: '01:00:00'
+      #   downtime_after: '01:00:00'
+      # event_visibility_Prec5:
+      #   low_threshold_field: precip_type_5min:idx == 5 & visibility:m # low = wert unterschritten, value von oben
+      #   low_threshold_agg: min # min sichtweite oder 1. percentile
+      #   low_threshold_value: 244 #
+      #   downtime_before: '01:00:00'
+      #   downtime_after: '01:00:00'
+      # event_visibility_Prec6:
+      #   low_threshold_field: precip_type_5min:idx == 6 & visibility:m # low = wert unterschritten, value von oben
+      #   low_threshold_agg: min # min sichtweite oder 1. percentile
+      #   low_threshold_value: 244 #
+      #   downtime_before: '01:00:00'
+      #   downtime_after: '01:00:00'       
+

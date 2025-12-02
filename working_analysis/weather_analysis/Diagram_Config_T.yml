@@ -1,0 +1,93 @@
+# parquet format benötigt
+start_date: "31-12-2018 00:00"
+end_date: "31-12-2021 23:55"
+# start_date: "01-19-2020 00:00"
+# end_date: "07-06-2020 23:55"
+location: Los_Angeles
+area: all
+
+# file_location: WeatherResults\Hamburg
+# file_location: WeatherResults\visibility
+# file_location: results
+# file_location: Oslo_2019_2021_PipelineResults
+file_location: output_pipeline
+
+categories:
+
+  rain:
+    name: Rain
+    high_threshold_field: precip_type_5min:idx == 1 & precip_5min:mm
+    high_threshold_field_human: Rain in mm/5min
+    high_threshold_agg: max
+    max_display_value_x: 4
+    min_display_value_x: 0
+    max_display_value_y: 5000 # with NaNs = 30000 /5000
+    min_display_value_y: 0
+    thresholds:
+      - 0
+      - 0.63
+    step_size: 0.1
+  snow:
+    name: Snow
+    high_threshold_field: precip_type_5min:idx == 3 & precip_5min:mm
+    high_threshold_field_human: Snow in mm/5min
+    high_threshold_agg: max
+    max_display_value_x: 4
+    min_display_value_x: 0
+    max_display_value_y: 300 # 30000 / 300
+    min_display_value_y: 0
+    thresholds:
+      - 0 # Argo
+      - 0.17 # ME
+    step_size: 0.25 # 0.025
+  visibility:
+     name: Visibility
+     # low_threshold_field: precip_type_5min:idx == 0 & visibility:m # veraltet = kann weg?
+     low_threshold_field: visibility:m
+     low_threshold_agg: min
+     max_display_value_x: 2000 # max sichtweite
+     min_display_value_x: 0
+     max_display_value_y: 1000 #?  1000m sichtweite = > wieviele h erwarten wir das?
+     min_display_value_y: 0
+     thresholds:
+       - 100
+       - 200
+       - 300
+       - 400
+       - 500
+       - 1000
+     step_size: 100
+# list of all events -> txt Datei benötigt -> executeWeatherAnalysis
+events:
+  event_visibility:
+    name: Visibility
+    mode: month
+    low_threshold_field: visibility:m
+    low_threshold_agg: min
+    low_threshold_value: 500
+    downtime_before: '01:00:00'
+    downtime_after: '01:00:00'
+    downTime: False
+    # bei darstellung downtime before/after mit reinrechnen? false = 5 min (Start / Ende von threshold), true = 2 h
+    direction: below
+  #   # Above bedeutet alle Events, die dadurch getriggert werden, dass der obere Threshold überschritten wird, below analog für den unteren
+  event_snow_rate:
+    name: Snow  Event
+    mode: month
+    high_threshold_field: precip_type_5min:idx == 3 & precip_5min:mm
+    high_threshold_agg: max
+    high_threshold_value: 0.17
+    downtime_before: '01:00:00'
+    downtime_after: '01:00:00'
+    downTime: False
+    direction: above
+  event_rain:
+    name: Rain Event
+    mode: month
+    high_threshold_field: precip_type_5min:idx == 1 & precip_5min:mm
+    high_threshold_agg: max
+    high_threshold_value:  0.63 #20mm/h --> 1.67 mm/5min # alt:0.63 #7.6mm/h --> 0.63 mm/5min
+    #downtime_before: '01:00:00'
+    #downtime_after: '01:00:00'
+    downTime: False
+    direction: above
